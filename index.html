@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ctrl+u</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: #ff0000;   /* 纯红背景 */
+            color: #ff0000;              /* 红色文字，与背景融为一体 */
+        }
+
+        .nope {
+            display: flex;
+            flex-direction: column;      /* 竖向排列，一行一个字母 */
+            align-items: center;         /* 水平居中 */
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            font-weight: 900;
+            /* 每个字母撑满一屏高度，允许滚动 */
+            font-size: 100vh;
+            line-height: 1;
+            letter-spacing: 0;
+            text-align: center;
+            /* 允许用户选中文本 */
+            user-select: text;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+        }
+
+        /* 关键：每个字母占满一屏高度，并用 flex 垂直居中，
+           这样字母不会偏上被裁掉，滚动时每个字母都完整可见 */
+        .nope span {
+            display: flex;
+            align-items: center;         /* 字母在行框内垂直居中 */
+            justify-content: center;     /* 字母水平居中 */
+            height: 100vh;               /* 每个字母占满一屏高 */
+            width: 100%;
+        }
+
+        /* 选中时蓝底白字，一选中即可见 */
+        .nope::selection,
+        .nope span::selection {
+            background: #3390ff;
+            color: #ffffff;
+        }
+
+        .nope::-moz-selection,
+        .nope span::-moz-selection {
+            background: #3390ff;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="nope">
+        <span>N</span>
+        <span>O</span>
+        <span>P</span>
+        <span>E</span>
+    </div>
+
+    <!--
+—  在黑与白的交错之中
+—  是的
+—  回望沿途的脚印
+—  是的
+—  串起来，找到最后的钥匙，打开终末的门扉
+—  但前面是2，先生
+—  变成10
+—  是的
+—  分成三组，但必须≤26
+—  是的，一定是26
+—  署名：凯撒 · 莱夫特 · 三
+—  是的
+—  结束
+—  止于此吗
+—  这趟旅途？这款解谜？
+—  我说的是大学之道，先生
+    -->
+</body>
+</html>
